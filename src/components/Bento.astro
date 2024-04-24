@@ -1,13 +1,88 @@
 ---
-import BentoItem from './BentoItem.astro'
+import BentoItem from "./BentoItem.astro";
 ---
 
-<section 
-    class={`
+<section
+  class={`
     w-full max-w-[1400px]
-    grid grid-col-10 auto-rows-[35rem] gap-4m-auto p-20
+    grid grid-col-10 auto-rows-[30rem] gap-4 mx-auto p-20
     `}
 >
-    <BentoItem></BentoItem>
+  <BentoItem
+    class="col-span-10 md:col-span-4"
+    title="Selección de Granos"
+    subtitle="Descubre una gama de sabores únicos provenientes de los rincones más selectos del mundo del café."
+  >
+  <div 
+  slot="image"
+  class="absolute left-0 top-0 bottom-0 
+    h-full group-hover:scale-110 transition-scale duration-1000
+    ease-in-out opacity-90 bg-blend-luminosity bg-center 
+    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  style="background-image: url('/granos.webp')"
+>
+  </div>
+    <p slot="content">
+      Descubre una gama de sabores únicos provenientes de los <strong
+        >rincones más selectos</strong
+      > del mundo del café.
+    </p>
+  </BentoItem>
 
+  <BentoItem
+    class="col-span-10 md:col-span-6"
+    title="Sabor Auténtico"
+    subtitle="Siente la esencia pura del café en cada sorbo, preparado con cuidado y amor por nuestros baristas expertos."
+  >
+  <div 
+  slot="image"
+  class="absolute left-0 top-0 bottom-0 
+    h-full group-hover:scale-110 transition-scale duration-1000
+    ease-in-out opacity-90 bg-blend-luminosity bg-center 
+    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  style="background-image: url('/cafe.webp')"
+>
+  </div>
+    <p slot="content" class="max-w-xl">
+      Siente la <strong>esencia pura</strong> del café en cada sorbo, preparado con
+      cuidado y amor por nuestros baristas expertos.
+    </p>
+  </BentoItem>
+
+  <BentoItem
+    class="col-span-10 md:col-span-6"
+    title="Experiencias Únicas"
+    subtitle="Sumérgete en un ambiente acogedor y vive momentos memorables mientras disfrutas de nuestro café artesanal y deliciosa repostería."
+  >
+  <div 
+  slot="image"
+  class="absolute left-0 top-0 bottom-0 
+    h-full group-hover:scale-110 transition-scale duration-1000
+    ease-in-out opacity-90 bg-blend-luminosity bg-center 
+    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  style="background-image: url('/molino.webp')"
+>
+  </div>
+    <p slot="content">
+      Sumérgete en un ambiente acogedor y vive momentos memorables mientras
+      disfrutas de nuestro café artesanal y <strong
+        >deliciosa repostería.</strong>
+    </p>
+  </BentoItem>
+
+  <BentoItem class="col-span-10 md:col-span-4" title="Pasión por el Café">
+    <div 
+  slot="image"
+  class="absolute left-0 top-0 bottom-0 
+    h-full group-hover:scale-110 transition-scale duration-1000
+    ease-in-out opacity-90 bg-blend-luminosity bg-center 
+    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  style="background-image: url('/pasion.webp')"
+>
+  </div>
+    <p slot="content">
+      Descubre la <strong>pasión</strong> que ponemos en cada taza, desde la cuidadosa
+      selección de granos hasta la preparación con esmero por nuestro equipo.
+    </p>
+  </BentoItem>
 </section>
