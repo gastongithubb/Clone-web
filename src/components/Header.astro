@@ -1,24 +1,27 @@
 ---
 import Logo from "./Logo.astro"
+import Layout from "../layouts/Layout.astro"
 ---
 
-<header id="header-nav" class="fixed top-0 w-full px-8 py-4 z-50">
+<header id="header-nav" class="fixed top-0 left-0 w-screen px-8 py-2 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-10">
-        <a href="/" class="col-span-1">
-        <Logo class="w-12" />
+        <a href="../index.astro" class="col-span-1">
+        <Logo class="w-12" /> 
     </a>
     </div>
-    <nav class="">
+    <nav class="p-0">
         <ul class="flex justify-center top-0 -mt-10 py-4 gap-4">
             <li>
-                <a class="hover:underline" href="#">INFO</a>
+                <a class="hover:underline" href="#">MENU</a>
             </li>
-            <li><a class="hover:underline" href="#">ARCHIVO</a>
+            <li><a class="hover:underline" href="#">CAFÉ</a>
             </li>
+            <li><a class="hover:underline" href="#">EXPERIENCIA GRANO</a></li>
         </ul>
     </nav>
     <a href="#" 
-    class="md:hidden absolute top-6 right-6">
+    class="border rounded-full inline-block border-white px-4 py-2
+    justify-self-end hover:bg-white hover:text-black duration-300">
 Coffe Grano
 </a>
 </header>
