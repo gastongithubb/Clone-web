@@ -1,8 +1,9 @@
+---
+import TextLogo from "./TextLogo.astro"
+---
 <div class="w-full relative">
-    <img class="absolute top-10 z-10 w-[1000px] left-0 right-0 m-auto" 
-    alt=""
-    src="/Logo.svg"
-    />
+     
+    <TextLogo class="absolute top-60 z-10 w-[400px] left-0 right-0 m-auto" />
     <video class="w-full h-screen object-cover object-top animated-ease-in-out animate-fade animate-duration-1000"
  src="/video.mp4"
  autoplay
@@ -10,11 +11,11 @@
  muted
  style="clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 50% 100%, 0 85%);">
     </video>
-    <!-- <video class="absolute -bottom-48 blur-1xl -z-40"
- src="../../public/video.webm"
+<video class="absolute -bottom-48 blur-3xl -z-40"
+ src="./video.mp4"
  autoplay
  loop
  muted>
-    </video> -->
+    </video> 
 
 </div>

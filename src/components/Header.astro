@@ -2,21 +2,23 @@
 import Logo from "./Logo.astro"
 ---
 
-<header class="h-12 fixed w-screen py-4 z-10 backdrop-blur-sm top-0 px-8 lg:px-0">
-    <div class="grid grid-cols-3 max-w-7xl mx-auto items-center justify-between">
+<header id="header-nav" class="fixed top-0 w-full px-8 py-4 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-10">
         <a href="/" class="col-span-1">
         <Logo class="w-12" />
     </a>
     </div>
-    <nav class="col-span-1 justify-self-center">
-        <ul class="flex gap-4">
-            <li>INFO</li>
-            <li>ARCHIVO</li>
+    <nav class="">
+        <ul class="flex justify-center top-0 -mt-10 py-4 gap-4">
+            <li>
+                <a class="hover:underline" href="#">INFO</a>
+            </li>
+            <li><a class="hover:underline" href="#">ARCHIVO</a>
+            </li>
         </ul>
     </nav>
     <a href="#" 
-    class="border rounded-full inline-block border-white px-4 py-2
-    justify-self-end hover:bg-white hover:text-black duration-300">
+    class="md:hidden absolute top-6 right-6">
 Coffe Grano
 </a>
 </header>

@@ -5,24 +5,25 @@ import BentoItem from "./BentoItem.astro";
 <section
   class={`
     w-full max-w-[1400px]
-    grid grid-col-10 auto-rows-[30rem] gap-4 mx-auto p-20
+    grid lg:grid-col-10 auto-rows-[30rem] gap-4 
+    mx-auto p-6 md:p-12 lg:p-20
     `}
 >
   <BentoItem
-    class="col-span-10 md:col-span-4"
+    class="col-span-10 lg:col-span-4"
     title="Selección de Granos"
     subtitle="Descubre una gama de sabores únicos provenientes de los rincones más selectos del mundo del café."
   >
   <div 
   slot="image"
-  class="absolute left-0 top-0 bottom-0 
-    h-full group-hover:scale-110 transition-scale duration-1000
-    ease-in-out opacity-90 bg-blend-luminosity bg-center 
-    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-blue-950
+        bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
   style="background-image: url('/granos.webp')"
 >
   </div>
-    <p slot="content">
+    <p slot="content"
+    class="max-w-xl text-base md:text-lg">
       Descubre una gama de sabores únicos provenientes de los <strong
         >rincones más selectos</strong
       > del mundo del café.
@@ -36,14 +37,13 @@ import BentoItem from "./BentoItem.astro";
   >
   <div 
   slot="image"
-  class="absolute left-0 top-0 bottom-0 
-    h-full group-hover:scale-110 transition-scale duration-1000
-    ease-in-out opacity-90 bg-blend-luminosity bg-center 
-    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full bg-blue-800
+    bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
   style="background-image: url('/cafe.webp')"
 >
   </div>
-    <p slot="content" class="max-w-xl">
+    <p slot="content" class="max-w-xl text-base md:text-lg">
       Siente la <strong>esencia pura</strong> del café en cada sorbo, preparado con
       cuidado y amor por nuestros baristas expertos.
     </p>
@@ -56,14 +56,14 @@ import BentoItem from "./BentoItem.astro";
   >
   <div 
   slot="image"
-  class="absolute left-0 top-0 bottom-0 
-    h-full group-hover:scale-110 transition-scale duration-1000
-    ease-in-out opacity-90 bg-blend-luminosity bg-center 
-    bg-cover bg-no-repeat bg-blue-950 -z-10"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-blue-900
+        bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
   style="background-image: url('/molino.webp')"
 >
   </div>
-    <p slot="content">
+    <p slot="content"
+    class="max-w-xl text-base md:text-lg">
       Sumérgete en un ambiente acogedor y vive momentos memorables mientras
       disfrutas de nuestro café artesanal y <strong
         >deliciosa repostería.</strong>
@@ -71,18 +71,54 @@ import BentoItem from "./BentoItem.astro";
   </BentoItem>
 
   <BentoItem class="col-span-10 md:col-span-4" title="Pasión por el Café">
-    <div 
+  <div 
   slot="image"
-  class="absolute left-0 top-0 bottom-0 
-    h-full group-hover:scale-110 transition-scale duration-1000
-    ease-in-out opacity-90 bg-blend-luminosity bg-center 
-    bg-cover bg-no-repeat bg-blue-950 -z-10"
-  style="background-image: url('/pasion.webp')"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full bg-blue-950
+        bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+  style="background-image: url('/pasion.jpeg')"
 >
   </div>
-    <p slot="content">
+    <p slot="content"
+    class="max-w-xl text-base md:text-lg">
       Descubre la <strong>pasión</strong> que ponemos en cada taza, desde la cuidadosa
       selección de granos hasta la preparación con esmero por nuestro equipo.
     </p>
   </BentoItem>
 </section>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const backgrounds = document.querySelectorAll(
+      ".background"
+    ) as NodeListOf<HTMLElement>
+
+    if (window.IntersectionObserver == null) {
+      backgrounds.forEach((bkg) => {
+        bkg.style.backgroundImage = "url('" + bkg.dataset.src + "')"
+      })
+      return
+    }
+
+    function handleIntersection(entries: IntersectionObserverEntry[]) {
+      entries.map((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement
+          const { style, dataset } = target
+          // Item has crossed our observation
+          // threshold - load src from data-src
+          style.backgroundImage = "url('" + dataset.src + "')"
+          // Job done for this item - no need to watch it!
+          observer.unobserve(entry.target)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      rootMargin: "100px",
+    })
+
+    backgrounds.forEach((bkg) => observer.observe(bkg))
+  })
+</script>
+
