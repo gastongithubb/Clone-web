@@ -3,25 +3,28 @@ import Logo from "./Logo.astro"
 import Layout from "../layouts/Layout.astro"
 ---
 
-<header id="header-nav" class="fixed top-0 left-0 w-screen px-8 py-2 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-10">
-        <a href="../index.astro" class="col-span-1">
-        <Logo class="w-12" /> 
+<header id="header-nav" class="fixed justify-between top-0 left-0 w-screen px-8 py-2 z-50">
+    <div class="max-w-7xl mx-auto flex items-center gap-10">
+        <a href='/' class="col-span-1">
+        <Logo class="w-12"> 
+    </a>
+    <a href="#" class="border rounded-full border-white px-4 py-2 hover:bg-white hover:text-black duration-300">
+        Coffee Grano
     </a>
     </div>
     <nav class="p-0">
-        <ul class="flex justify-center top-0 -mt-10 py-4 gap-4">
+        <ul class="flex justify-center top-0 -mt-12 py-4 gap-4">
             <li>
-                <a class="hover:underline" href="#">MENU</a>
+                <a class="hover:underline" href='/menu'>MENU</a>
             </li>
-            <li><a class="hover:underline" href="#">CAFÉ</a>
+            <li><a class="hover:underline" href='/cafe'>CAFÉ</a>
             </li>
-            <li><a class="hover:underline" href="#">EXPERIENCIA GRANO</a></li>
+            <li><a class="hover:underline" href='/experience'>EXPERIENCIA GRANO</a></li>
         </ul>
+        
     </nav>
-    <a href="#" 
-    class="border rounded-full inline-block border-white px-4 py-2
-    justify-self-end hover:bg-white hover:text-black duration-300">
-Coffe Grano
-</a>
+    
+    
+    
+      
 </header>

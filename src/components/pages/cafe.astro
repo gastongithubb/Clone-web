@@ -1,0 +1,97 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import HeroContainer from "../HeroContainer.astro"
+import Footer from "../Footer.astro"
+import BentoItem from "../BentoItem.astro"
+---
+
+<Layout 
+title="Experiencias" 
+description="ghghg">
+<HeroContainer img="./cafe.jpeg">
+    <h1 class="text-8xl font-semibold absolute top-60 z-10 w-[400px] left-40 right-0 m-auto mb-10 justify-center items-center">
+        CAFE
+    </h1>
+
+</HeroContainer>
+<main>
+    <section class="relative z-10 mx-auto my-24 max-w-[70ch] text-pretty px-6 text-left text-xl sm:px-20">
+        <img src="./cafe-logo.svg" class="w-20 m-auto mb-10 invert"/>
+        <h1  class="text-5xl font-semibold text-center text-wrap mx-auto mb-10 tracking-wide">
+            Nuestro café <img src="./text-logo.svg" class="w-[200px] pt-10 text-center mx-auto mb-10 tracking-wide invert"/>
+        </h1>
+        <p>
+            Para cada momento hay una forma de vivir la <strong>Experiencia Grano</strong> como vos quieras.
+          </p>
+          <p>
+            En nuestra cafetería, nos esforzamos por ofrecerte un ambiente acogedor y una amplia variedad de opciones para que puedas disfrutar de momentos especiales con tus seres queridos o simplemente relajarte y disfrutar de un delicioso café. Te invitamos a que nos visites y descubras la experiencia <strong>Grano</strong> por ti mismo.
+          </p>
+    </section>
+
+    <section
+  class={`
+    w-full max-w-[1400px]
+    grid lg:grid-col-10 auto-rows-[30rem] gap-4 
+    mx-auto p-6 md:p-12 lg:p-20
+    `}
+>
+  <BentoItem
+    class="col-span-10 md:col-span-4"
+    title="In Store"
+  >
+  <div 
+  slot="image"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full	
+        bg-cover bg-end bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out"
+  style="background-image: url('/instore.jpg')"
+>
+  </div>
+    <p slot="content"
+    class="max-w-xl text-base md:text-lg">
+        En nuestras tiendas te esperan nuestros baristas capacitados para ofrecerte una bebida <strong>muy especial</strong>. El ambiente <strong>cálido</strong> y los detalles de nuestros productos elaborados <strong>artesanalmente</strong> hacen que la experiencia sea única e inigualable.
+      </p>
+  </BentoItem>
+
+  <BentoItem
+    class="col-span-10 md:col-span-4"
+    title="Drive Thru"
+  >
+  <div 
+  slot="image"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+    -z-10 h-full w-full
+    bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out"
+  style="background-image: url('/drive-thru.jpeg')"
+>
+  </div>
+    <p slot="content" class="max-w-xl text-base md:text-lg">
+              Retirá y viví la <strong>Experiencia Grano</strong>.
+            </p>
+          
+  </BentoItem>
+
+  <BentoItem
+    class="col-span-10 md:col-span-4"
+    title="Delivery"
+  >
+  <div 
+  slot="image"
+  class="background transition-scale absolute bottom-0 left-0 top-0
+        -z-10 h-full w-full
+        bg-cover bg-start bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out"
+  style="background-image: url('/delivery.jpeg')"
+>
+  </div>
+    <p slot="content"
+    class="max-w-xl text-base md:text-lg">
+    Los clientes pueden pedir sus bebidas y productos favoritos donde sea que estén con operadores logísticos al servicio como <strong>Pedidos Ya</strong>.
+</p>
+  </BentoItem>
+
+  
+</section>
+
+<Footer />
+</main>
+</Layout>
