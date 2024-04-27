@@ -7,37 +7,47 @@ import HeroContainer from "../HeroContainer.astro"
 
 
 <Layout title="About Us" description="ghghg">
-    <HeroContainer img="/cafe.webp">
+    <video class="w-full h-[90vh] object-cover object-top animated-ease-in-out animate-fade animate-duration-1000"
+ src="/experience.mp4"
+ autoplay
+ loop
+ muted
+ style="clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 50% 100%, 0 85%);">
+    </video>
         <h1
-          class="text-8xl font-semibold absolute top-60 z-10 w-[800px] m-auto mb-10 justify-center items-center"
+          class="text-8xl font-semibold absolute left-[38%] top-60 z-10 w-[800px] m-auto mb-10 justify-center items-center"
         >
           About Us
         </h1>
-      </HeroContainer>
     <main>
         <section
-        class="relative z-10 mx-auto my-24 max-w-[70ch] text-pretty px-6 text-left text-xl sm:px-20"
+        class="relative z-10 mx-auto my-24 max-w-[1200px] text-pretty px-6 text-left text-xl sm:px-20"
       >
-        <img src="./cafe-logo.svg" class="w-20 m-auto mb-10 invert" />
         <h1
           class="text-5xl font-semibold text-center text-wrap mx-auto mb-10 tracking-wide"
         >
-          Experiencia <img
+          <img
             src="./text-logo.svg"
-            class="w-[200px] pt-10 text-center mx-auto mb-10 tracking-wide invert"
+            class="w-[400px] pt-10 text-center mx-auto mb-10 tracking-wide invert"
           />
         </h1>
         <p>
-          Para cada momento hay una forma de vivir la <strong
-            >Experiencia Grano</strong
-          > como vos quieras.
+            Bienvenido a <strong>Café Grano</strong>, donde la pasión por el café se fusiona con la tradición y la innovación.
         </p>
         <p>
-          En nuestra cafetería, nos esforzamos por ofrecerte un ambiente acogedor
-          y una amplia variedad de opciones para que puedas disfrutar de momentos
-          especiales con tus seres queridos o simplemente relajarte y disfrutar de
-          un delicioso café. Te invitamos a que nos visites y descubras la
-          experiencia <strong>Grano</strong> por ti mismo.
+            En <strong>Café Grano</strong>, nuestra historia comienza en los majestuosos campos de café de América Latina, donde cada grano es cuidadosamente seleccionado por manos expertas que han heredado el arte de cultivar el café durante generaciones. Nos enorgullece traer lo mejor de estas tierras lejanas directamente a tu taza, asegurando que cada sorbo cuente una historia de calidad y dedicación.
+        </p>
+        <p>
+            Nuestro compromiso con la excelencia se refleja en cada etapa de nuestro proceso, desde la cosecha hasta la taza. Trabajamos en estrecha colaboración con pequeños productores locales, apoyando prácticas sostenibles que respetan tanto a las comunidades como al medio ambiente. Cada grano es tostado con <strong>amor</strong> y precisión en nuestras instalaciones, liberando aromas <strong>ricos</strong> y sabores <strong>complejos</strong> que deleitan los sentidos.
+        </p>
+        <p>
+            En <strong>Café Grano</strong>, no solo nos esforzamos por ofrecerte el mejor café, sino que también nos esforzamos por crear un espacio donde puedas disfrutar de momentos significativos. Nuestras cafeterías son lugares acogedores donde puedes relajarte, conectarte con amigos y sumergirte en la cultura del café. Nuestros baristas expertos están aquí para guiarte en un viaje <strong>sensorial</strong>, desde el primer aroma tentador hasta el último sorbo <strong>satisfactorio</strong>.
+        </p>
+        <p>
+            Estamos comprometidos a compartir nuestra pasión por el café contigo, ofreciendo una experiencia auténtica que va más allá de la bebida en sí. Únete a nosotros en <strong>Café Grano</strong> y descubre un mundo de sabores auténticos, tradición arraigada y momentos memorables, taza tras taza.
+        </p>
+        <p>
+            ¡Gracias por ser parte de nuestra historia!
         </p>
       </section>
   
@@ -64,37 +74,6 @@ import HeroContainer from "../HeroContainer.astro"
             > y los detalles de nuestros productos elaborados <strong
               >artesanalmente</strong
             > hacen que la experiencia sea única e inigualable.
-          </p>
-        </BentoItem>
-  
-        <BentoItem class="col-span-10 md:col-span-4" title="Drive Thru">
-          <div
-            slot="image"
-            class="background transition-scale absolute bottom-0 left-0 top-0
-      -z-10 h-full w-full
-      bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out"
-            style="background-image: url('/drive-thru.jpeg')"
-          >
-          </div>
-          <p slot="content" class="max-w-xl text-base md:text-lg">
-            Retirá y viví la <strong>Experiencia Grano</strong>.
-          </p>
-        </BentoItem>
-  
-        <BentoItem class="col-span-10 md:col-span-4" title="Delivery">
-          <div
-            slot="image"
-            class="background transition-scale absolute bottom-0 left-0 top-0
-          -z-10 h-full w-full
-          bg-cover bg-start bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out"
-            style="background-image: url('/delivery.jpeg')"
-          >
-          </div>
-          <p slot="content" class="max-w-xl text-base md:text-lg">
-            Los clientes pueden pedir sus bebidas y productos favoritos donde sea
-            que estén con operadores logísticos al servicio como <strong
-              >Pedidos Ya</strong
-            >.
           </p>
         </BentoItem>
       </section>
