@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
+import ToggleMenu from '../components/ToggleMenu.astro';
 import "@fontsource-variable/onest";
 interface Props {
   description: string;
@@ -26,6 +27,7 @@ const { description, title } = Astro.props;
   <body>
     <Header />
     <slot />
+    
   </body>
 
   <style is:global>
@@ -96,20 +98,4 @@ const { description, title } = Astro.props;
       }
     }
   </style>
-  <script>
-    var toggleMenu = document.getElementById('toggleMenu');
-    console.log('toggleMenu:', toggleMenu);
-    
-    if (toggleMenu) {
-      toggleMenu.addEventListener('click', function() {
-        console.log('toggleMenu clicked');
-        var navbarDefault = document.getElementById('navbar-default');
-        console.log('navbarDefault:', navbarDefault);
-        if (navbarDefault) {
-          navbarDefault.classList.toggle('hidden');
-          console.log('navbarDefault toggled');
-        }
-      });
-    }
-    </script>
 </html>
