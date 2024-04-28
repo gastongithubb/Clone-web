@@ -1,52 +1,55 @@
-<header id="header-nav" class="fixed flex shadow-md py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] w-full tracking-wide z-50">
-  <div class="flex flex-wrap items-center justify-between gap-5 w-full">
-    <a href="/"><img src="text-logo.svg" alt="logo" class="w-36 invert" /></a>
-
-    <!-- Menú para tablet y dispositivos más pequeños -->
-    <div class="btn-group p-3 bd-example m-0 border-0 lg:hidden position-static">
-      <button id="toggleMenu" type="button" class="btn btn-secondary dropdown-toggle border-black bg-black" aria-expanded="false">
-        Menu
-      </button>
-      <ul id="menuList" class="dropdown-menu dropdown-menu-end d-none" style="">
-        <li><button class="dropdown-item" type="button"><a href="/">Home</a></button></li>
-        <li><button class="dropdown-item" type="button"><a href="/menu">Menu</a></button></li>
-        <li><button class="dropdown-item" type="button"><a href="/cafe">Cafe</a></button></li>
-        <li><button class="dropdown-item" type="button"><a href="/experience">Experience</a></button></li>
-        <li><button class="dropdown-item" type="button"><a href="/about">About</a></button></li>
+<nav id="header-nav" class="fixed w-full bg-none border-gray-200 dark:bg-none z-50">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="text-logo.svg" class="h-8 fill-white" alt="Grano Logo" />
+    </a>
+    <button id="toggleMenu" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+        <li>
+          <a href="/" class="block py-2 px-3 text-white hover:text-primary duration-300" aria-current="page">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/menu" class="block py-2 px-3 text-white hover:text-primary duration-300" aria-current="page">
+            Menu
+          </a>        
+        </li>
+        <li>
+          <a href="/cafe" class="block py-2 px-3 text-white hover:text-primary duration-300" aria-current="page">
+            Café
+          </a>        
+        </li>
+        <li>
+          <a href="/experience" class="block py-2 px-3 text-white hover:text-primary duration-300" aria-current="page">
+            Experiencias
+          </a>        
+        </li>
+        <li>
+          <a href="/about" class="block py-2 px-3 text-white hover:text-primary duration-300" aria-current="page">
+            About
+          </a>        
+        </li>
       </ul>
     </div>
-    
-    
-    
-
-    <!-- Menú para dispositivos más grandes -->
-    <div class="hidden lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
-      <a href="/" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
-        Home</a>
-      <a href="/menu" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
-        Menu</a>
-      <a href="/cafe" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
-        Cafe</a>
-      <a href="/experience" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
-        Experience</a>
-      <a href="/about" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
-        About</a>
-    </div>
   </div>
-</header>
+</nav>
+
 <script>
   var toggleMenu = document.getElementById('toggleMenu');
 
   if (toggleMenu) {
     toggleMenu.addEventListener('click', function() {
-      var menuList = document.getElementById('menuList');
-      if (menuList) {
-        menuList.classList.toggle('d-none');
+      var navbarDefault = document.getElementById('navbar-default');
+      if (navbarDefault) {
+        navbarDefault.classList.toggle('hidden');
       }
     });
   }
 </script>
-
-
-
-
