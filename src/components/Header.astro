@@ -40,16 +40,19 @@
     </div>
   </div>
 </nav>
-
 <script>
-  var toggleMenu = document.getElementById('toggleMenu');
+var toggleMenu = document.getElementById('toggleMenu');
+console.log('toggleMenu:', toggleMenu);
 
-  if (toggleMenu) {
-    toggleMenu.addEventListener('click', function() {
-      var navbarDefault = document.getElementById('navbar-default');
-      if (navbarDefault) {
-        navbarDefault.classList.toggle('hidden');
-      }
-    });
-  }
+if (toggleMenu) {
+  toggleMenu.addEventListener('click', function() {
+    console.log('toggleMenu clicked');
+    var navbarDefault = document.getElementById('navbar-default');
+    console.log('navbarDefault:', navbarDefault);
+    if (navbarDefault) {
+      navbarDefault.classList.toggle('hidden');
+      console.log('navbarDefault toggled');
+    }
+  });
+}
 </script>
