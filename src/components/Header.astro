@@ -3,22 +3,24 @@
     <a href="/"><img src="text-logo.svg" alt="logo" class="w-36 invert" /></a>
 
     <!-- Menú para tablet y dispositivos más pequeños -->
-    <div class="btn-group hidden lg:hidden">
-      <button id="toggleMenu" type="button" class="btn btn-secondary dropdown-toggle" aria-expanded="false">
-        MENU
+    <div class="btn-group p-3 bd-example m-0 border-0 lg:hidden position-static">
+      <button id="toggleMenu" type="button" class="btn btn-secondary dropdown-toggle border-black bg-black" aria-expanded="false">
+        Menu
       </button>
-      <ul id="menuList" class="dropdown-menu dropdown-menu-end ">
-        <li><button class="dropdown-item" type="button">Home</button></li>
-        <li><button class="dropdown-item" type="button">Menu</button></li>
-        <li><button class="dropdown-item" type="button">Cafe</button></li>
-        <li><button class="dropdown-item" type="button">Experience</button></li>
-        <li><button class="dropdown-item" type="button">About</button></li>
+      <ul id="menuList" class="dropdown-menu dropdown-menu-end d-none" style="">
+        <li><button class="dropdown-item" type="button"><a href="/">Home</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="/menu">Menu</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="/cafe">Cafe</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="/experience">Experience</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="/about">About</a></button></li>
       </ul>
     </div>
     
+    
+    
 
     <!-- Menú para dispositivos más grandes -->
-    <div class="hidden lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+    <div class="hidden lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
       <a href="/" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
         Home</a>
       <a href="/menu" class="text-white hover:opacity-100 opacity-70 transition-opacity duration-300 block">
@@ -32,13 +34,19 @@
     </div>
   </div>
 </header>
-
 <script>
-  import $ from 'jquery';
+  var toggleMenu = document.getElementById('toggleMenu');
 
-  $(function() {
-    $('#toggleMenu').on('click', function() {
-      $('#menuList').toggle();
+  if (toggleMenu) {
+    toggleMenu.addEventListener('click', function() {
+      var menuList = document.getElementById('menuList');
+      if (menuList) {
+        menuList.classList.toggle('d-none');
+      }
     });
-  });
+  }
 </script>
+
+
+
+
