@@ -1,7 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
-import ToggleMenu from '../components/ToggleMenu.astro';
 import "@fontsource-variable/onest";
 interface Props {
   description: string;
@@ -19,7 +18,7 @@ const { description, title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="robots" content="nofollow, noindex" />
-        
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>   
     <title>{title}</title>
     <slot name="preload" />
     <ViewTransitions />

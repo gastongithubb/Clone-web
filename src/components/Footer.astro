@@ -1,6 +1,5 @@
 ---
 import Logo from "./Logo.astro"
-import LogoCompany from "./LogoCompany.astro"
 ---
 <footer class="bg-black/40 justify-between w-max-screen">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -10,7 +9,7 @@ import LogoCompany from "./LogoCompany.astro"
             <Logo class="h-auto w-24"/>
           </a>
           <div class="mt-6 flex justify-center gap-x-4">
-            <a href="https://www.instagram.com/premiosesland/" class="text-white hover:text-primary duration-300">
+            <a href="#" class="text-white hover:text-primary duration-300">
                 <svg
               class="size-6"
               xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +24,7 @@ import LogoCompany from "./LogoCompany.astro"
             >
               <span class="sr-only">Instagram</span>
             </a>
-            <a href="https://x.com/PremiosESLAND" class="text-white hover:text-primary duration-300">
+            <a href="#" class="text-white hover:text-primary duration-300">
                 <svg 
                 class="size-6"
                 aria-hidden="true"
@@ -39,7 +38,7 @@ import LogoCompany from "./LogoCompany.astro"
                 </svg>
               <span class="sr-only">Twitter</span>
             </a>
-            <a href="https://www.reddit.com/r/premiosESLAND/" class="text-white hover:text-primary duration-300">
+            <a href="#" class="text-white hover:text-primary duration-300">
                 <svg 
                 class="size-6"
                 xmlns="http://www.w3.org/2000/svg" 
@@ -51,19 +50,7 @@ import LogoCompany from "./LogoCompany.astro"
             </a>
           </div>
         </div>
-        <div>
-            <h2 class="mb-0 text-xl font-semibold uppercase text-white">
-              PRODUCIDO POR:
-            </h2>
-            <a
-              class="hover:opacity-100 opacity-70 transition-opacity duration-300 block"
-              href="/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LogoCompany class="w-60 -ml-8" />
-            </a>
-          </div>
+        
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
             <h2 class="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
@@ -74,8 +61,11 @@ import LogoCompany from "./LogoCompany.astro"
               <li class="mb-4">
                 <a href="#" class="hover:underline">Privacidad</a>
               </li>
-              <li>
+              <li class="mb-4">
                 <a href="#" class="hover:underline">Cookies</a>
+              </li>
+              <li>
+                <a href="/about" class="hover:underline">About</a>
               </li>
             </ul>
           </div>
